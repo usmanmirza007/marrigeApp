@@ -6,7 +6,7 @@ import Chat from 'react-native-vector-icons/Ionicons'
 import FeaIcon from 'react-native-vector-icons/Feather'
 import Star from 'react-native-vector-icons/Entypo'
 
-export default class checkList extends Component {
+export default class serviceList extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -32,6 +32,7 @@ export default class checkList extends Component {
                 </View>
                 <ScrollView>
                     <View style={{ marginHorizontal: wp('5%'), }}>
+                    <Text style={{fontWeight: '700', fontSize: 15, marginVertical: hp('1%'),}}>Bridal Artist</Text>
                         <View style={styles.inputView}>
                             <TextInput
                                 style={styles.input}
@@ -49,7 +50,9 @@ export default class checkList extends Component {
                                 <View style={styles.heartView}>
                                     <Image source={require('./../../image/check.png')} style={styles.check} resizeMode='stretch' />
                                     <View>
+                                        <TouchableOpacity onPress={() => { this.props.navigation.navigate('serviceDetail') }}>
                                         <Text style={styles.name}>Product Name</Text>
+                                        </TouchableOpacity>
                                         <Text style={styles.price}>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</Text>
                                     </View>
                                     <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>

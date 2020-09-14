@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
-import { View, StatusBar, StyleSheet,TextInput, ScrollView, ImageBackground, Image, Text, TouchableOpacity } from 'react-native';
+import { View, StatusBar, StyleSheet, TextInput, ScrollView, ImageBackground, Image, Text, TouchableOpacity } from 'react-native';
 import Color from '../../constant/color';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import Chat from 'react-native-vector-icons/Ionicons'
-import FeaIcon from 'react-native-vector-icons/Feather'
-import Heart from 'react-native-vector-icons/AntDesign'
-import Delete from 'react-native-vector-icons/MaterialCommunityIcons'
 
-export default class reservations extends Component {
+export default class services extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -24,28 +21,15 @@ export default class reservations extends Component {
                             <TouchableOpacity onPress={() => this.props.navigation.navigate('chatList')}>
                                 <Chat style={{ marginLeft: wp('0%'), }} name={'chatbubble-outline'} size={24} color="#000" />
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={() => this.props.navigation.navigate('checkOut')}>
-                                <Image source={require('./../../image/cart.png')} style={{ width: 20, marginLeft: wp('4%'), }} />
-                            </TouchableOpacity>
-                            <TouchableOpacity onPress={() => this.props.navigation.navigate('#')}>
+                            <TouchableOpacity onPress={() => this.props.navigation.navigate('logOut')}>
                                 <Image source={require('./../../image/user2.jpg')} style={{ width: 20, marginLeft: wp('4%'), borderRadius: 30, width: 30, height: 30 }} />
                             </TouchableOpacity>
                         </View>
                     </View>
                 </View>
                 <ScrollView>
-                   <View style={{marginHorizontal: wp('5%'),}}>
-                   <View style={styles.inputView}>
-                            <TextInput
-                                style={styles.input}
-                                placeholder="Search Results"
-                                placeholderTextColor={Color.greyPrimray}
-                                value={this.state.chooseDate}
-                                onChangeText={chooseDate => this.setState({ chooseDate })} />
-                            <FeaIcon style={{ alignSelf: 'center' }} name={'search'} size={24} color={Color.greyPrimray}
-                                onPress={
-                                    () => this.props.navigation.navigate('#')} />
-                        </View>
+                    <View style={{ marginHorizontal: wp('5%'), }}>
+                        <Text style={{marginVertical: hp('2%'), fontWeight: 'bold'}}>Upcoming Bookings</Text>
                         <TouchableOpacity style={[styles.mainCart]}>
                             <View style={{ flexDirection: 'row' }}>
                                 <Image source={require('./../../image/user2.jpg')} style={styles.imageSecond} resizeMode='stretch' />
@@ -56,7 +40,7 @@ export default class reservations extends Component {
                                         <Text style={styles.price}>Time: 13:00</Text>
                                     </View>
                                     <TouchableOpacity style={styles.CANCEL}>
-                                        <Text style={{fontSize: 12}}>CANCEL</Text>
+                                        <Text style={{ fontSize: 12 }}>CANCEL</Text>
                                     </TouchableOpacity>
                                 </View>
                             </View>
@@ -71,12 +55,12 @@ export default class reservations extends Component {
                                         <Text style={styles.price}>Time: 13:00</Text>
                                     </View>
                                     <TouchableOpacity style={styles.CANCEL}>
-                                        <Text style={{fontSize: 12}}>CANCEL</Text>
+                                        <Text style={{ fontSize: 12 }}>CANCEL</Text>
                                     </TouchableOpacity>
                                 </View>
                             </View>
                         </TouchableOpacity>
-                   </View>
+                    </View>
                 </ScrollView>
             </View>
         );
@@ -104,7 +88,7 @@ const styles = StyleSheet.create({
         width: 250,
         fontWeight: '500',
     },
-    CANCEL:{
+    CANCEL: {
         backgroundColor: Color.Mustard,
         width: wp('25%'),
         marginLeft: wp('25%'),
@@ -123,7 +107,7 @@ const styles = StyleSheet.create({
     },
     imageSecond: {
         width: 80,
-         height: 100,
+        height: 100,
         //  marginRight: 10, 
         borderRadius: 10,
     },

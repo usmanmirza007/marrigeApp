@@ -3,11 +3,8 @@ import { View, StatusBar, StyleSheet, ScrollView, ImageBackground, Image, Text, 
 import Color from '../../constant/color';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { TextInput } from 'react-native-paper';
-import RadioForm, { RadioButton, RadioButtonInput, RadioButtonLabel } from 'react-native-simple-radio-button';
 
-
-
-export default class signIn extends Component {
+export default class signInService extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -51,7 +48,7 @@ export default class signIn extends Component {
                         value={this.state.fname}
                         onChangeText={fname => this.setState({ fname })}
                     />
-                    <Text style={{ marginLeft: wp('5%'), marginVertical: hp('2%'), }}>Don't have an account? <Text style={{textDecorationLine: 'underline', color: Color.Mustard}} onPress={() => this.props.navigation.navigate('signUp')}>Sign Up</Text></Text>
+                    <Text style={{ marginLeft: wp('5%'), marginVertical: hp('2%'), }}>Don't have an account? <Text style={{ textDecorationLine: 'underline', color: Color.Mustard }} onPress={() => this.props.navigation.navigate('signUpService')}>Sign Up</Text></Text>
                     <Text style={{ alignSelf: 'center', marginTop: hp('3%'), }}>SIGN IN WITH </Text>
                     <View style={styles.iconView}>
                         <TouchableOpacity>
@@ -65,7 +62,7 @@ export default class signIn extends Component {
                     </View>
 
                     <TouchableOpacity style={{ alignItems: 'center', justifyContent: 'center', borderWidth: 2, marginBottom: hp('2%'), borderColor: Color.black, borderRadius: 5, height: 50, marginHorizontal: wp('5%'), }}
-                        onPress={() => this.props.navigation.navigate('tab')}>
+                        onPress={() => this.props.navigation.navigate('tab2')}>
                         <Text style={{ fontWeight: 'bold', fontSize: 15, color: Color.Mustard }}>CONTINUE</Text>
                     </TouchableOpacity>
                 </ScrollView>
@@ -115,7 +112,7 @@ const styles = StyleSheet.create({
         fontSize: 15,
         color: '#666666'
     },
-    iconView:{
+    iconView: {
         flexDirection: 'row',
         justifyContent: 'space-around',
         marginHorizontal: wp('25%'),

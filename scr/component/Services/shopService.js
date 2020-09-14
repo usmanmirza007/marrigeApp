@@ -6,7 +6,7 @@ import Chat from 'react-native-vector-icons/Ionicons'
 import FeaIcon from 'react-native-vector-icons/Feather'
 
 
-export default class shop extends Component {
+export default class shopService extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -14,8 +14,6 @@ export default class shop extends Component {
                 { key: 1, image: require('./../../image/gift.png') },
                 { key: 2, image: require('./../../image/gift1.jpg') },
                 { key: 3, image: require('./../../image/gift2.png') },
-                { key: 4, image: require('./../../image/gift1.jpg') },
-                { key: 5, image: require('./../../image/gift.png') },
                 { key: 6, image: require('./../../image/gift1.jpg') },
             ]
         };
@@ -31,10 +29,7 @@ export default class shop extends Component {
                             <TouchableOpacity onPress={() => this.props.navigation.navigate('chatList')}>
                                 <Chat style={{ marginLeft: wp('0%'), }} name={'chatbubble-outline'} size={24} color="#000" />
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={() => this.props.navigation.navigate('checkOut')}>
-                                <Image source={require('./../../image/cart.png')} style={{ width: 20, marginLeft: wp('4%'), }} />
-                            </TouchableOpacity>
-                            <TouchableOpacity onPress={() => this.props.navigation.navigate('#')}>
+                           <TouchableOpacity onPress={() => this.props.navigation.navigate('logOut')}>
                                 <Image source={require('./../../image/user2.jpg')} style={{ width: 20, marginLeft: wp('4%'), borderRadius: 30, width: 30, height: 30 }} />
                             </TouchableOpacity>
                         </View>
@@ -42,17 +37,9 @@ export default class shop extends Component {
                 </View>
                 <ScrollView>
                     <View style={{ marginHorizontal: wp('5%'), }}>
-                        <View style={styles.inputView}>
-                            <TextInput
-                                style={styles.input}
-                                placeholder="Search Results"
-                                placeholderTextColor={Color.greyPrimray}
-                                value={this.state.chooseDate}
-                                onChangeText={chooseDate => this.setState({ chooseDate })} />
-                            <FeaIcon style={{ alignSelf: 'center' }} name={'search'} size={24} color={Color.greyPrimray}
-                                onPress={
-                                    () => this.props.navigation.navigate('#')} />
-                        </View>
+                    <TouchableOpacity onPress={() => { this.props.navigation.navigate('services') }} style={styles.checkoutView}>
+                            <Text style={styles.checkout}>ADD PRODUCT</Text>
+                        </TouchableOpacity>
                         <FlatList
                             numColumns={2}
                             keyExtractor={(item, index) => item.key + ""}
@@ -63,6 +50,7 @@ export default class shop extends Component {
                                 </TouchableOpacity>
                             }
                         />
+                        
                     </View>
                 </ScrollView>
             </View>
@@ -77,20 +65,6 @@ const styles = StyleSheet.create({
         // alignItems: 'center',
         // justifyContent: 'center',
     },
-    inputView: {
-        flexDirection: 'row',
-        borderRadius: 5,
-        backgroundColor: Color.LightMustard,
-        marginBottom: hp('3%'),
-    },
-    input: {
-        alignSelf: 'center',
-        paddingLeft: 10,
-        color: '#000',
-        height: 35,
-        width: 250,
-        fontWeight: '500',
-    },
     homeImage: {
         width: 135,
         height: 130,
@@ -98,5 +72,19 @@ const styles = StyleSheet.create({
         marginBottom: hp('3%'),
         borderRadius: 20
     },
+    checkoutView: {
+        borderWidth: 2,
+        borderColor: Color.black,
+        marginHorizontal: wp('0%'),
+        height: hp('10%'),
+        borderRadius: 5,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginVertical: hp('3%'),
+    },
+    checkout: {
+        color: Color.Mustard,
+        fontWeight: '700'
+    }
 });
 

@@ -8,7 +8,7 @@ import Star from 'react-native-vector-icons/Entypo'
 
 export default class serviceList extends Component {
     constructor(props) {
-        super(props);
+        super(props)
         this.state = {
         };
     }

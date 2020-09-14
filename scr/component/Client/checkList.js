@@ -20,7 +20,9 @@ export default class checkList extends Component {
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: wp('5%'), marginTop: hp('2%'), }}>
                         <Image source={require('./../../image/Logo.png')} style={{ width: 20, marginLeft: wp('4%'), width: 40, height: 40 }} />
                         <View style={{ flexDirection: 'row' }}>
-                            <Chat style={{ marginLeft: wp('0%'), }} name={'chatbubble-outline'} size={24} color="#000" />
+                            <TouchableOpacity onPress={() => this.props.navigation.navigate('chatList')}>
+                                <Chat style={{ marginLeft: wp('0%'), }} name={'chatbubble-outline'} size={24} color="#000" />
+                            </TouchableOpacity>
                             <TouchableOpacity onPress={() => this.props.navigation.navigate('checkOut')}>
                                 <Image source={require('./../../image/cart.png')} style={{ width: 20, marginLeft: wp('4%'), }} />
                             </TouchableOpacity>

@@ -5,7 +5,7 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 import { TextInput } from 'react-native-paper';
 import Chat from 'react-native-vector-icons/Ionicons'
 
-export default class service extends Component {
+export default class servicesClient extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -29,7 +29,9 @@ export default class service extends Component {
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: wp('5%'), marginTop: hp('2%'), }}>
                         <Image source={require('./../../image/Logo.png')} style={{ width: 20, marginLeft: wp('4%'), width: 40, height: 40 }} />
                         <View style={{ flexDirection: 'row' }}>
-                            <Chat style={{ marginLeft: wp('0%'), }} name={'chatbubble-outline'} size={24} color="#000" />
+                            <TouchableOpacity onPress={() => this.props.navigation.navigate('chatList')}>
+                                <Chat style={{ marginLeft: wp('0%'), }} name={'chatbubble-outline'} size={24} color="#000" />
+                            </TouchableOpacity>
                             <TouchableOpacity onPress={() => this.props.navigation.navigate('checkOut')}>
                                 <Image source={require('./../../image/cart.png')} style={{ width: 20, marginLeft: wp('4%'), }} />
                             </TouchableOpacity>

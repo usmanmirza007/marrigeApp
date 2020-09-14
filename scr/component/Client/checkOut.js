@@ -2,22 +2,14 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, FlatList, TextInput, ScrollView, ImageBackground, TouchableOpacity, } from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import Color from './../../constant/color';
-import AntIcon from 'react-native-vector-icons/AntDesign'
 import Edit from 'react-native-vector-icons/MaterialIcons'
 import Delete from 'react-native-vector-icons/MaterialCommunityIcons'
-import IcIcon from 'react-native-vector-icons/MaterialIcons'
+import Back from 'react-native-vector-icons/MaterialIcons'
 
 export default class shoppingCart extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            // images: [
-            //     { image: require('./../../image/images1.png') },
-            //     { image: require('./../../image/images1.png') },
-            //     { image: require('./../../image/images1.png') },
-            //     { image: require('./../../image/images1.png') }
-            // ],
-
         };
     }
     renderRow = ({ item }) => {
@@ -31,18 +23,10 @@ export default class shoppingCart extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <View style={{ height: hp('9%') }}>
-                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: wp('5%') }}>
-                        <View>
-                            <IcIcon style={{ marginLeft: -10 }} name={'keyboard-arrow-left'} size={40} color="#000"
-                                onPress={
-                                    () => this.props.navigation.goBack()} />
-                        </View>
-                        <View style={{ marginTop: hp('2%'), }}>
-                            <AntIcon style={{}} name={'hearto'} size={26} color="#000"
-                                // onPress={() => this.props.navigation.openDrawer()}
-                                 />
-                        </View>
+                <View style={{ height: hp('9%'), }}>
+                    <View style={{ marginHorizontal: wp('5%'), marginTop: hp('2%'), }}>
+                        <Back style={{ marginLeft: -10, marginTop: -5, }} name={'keyboard-arrow-left'} size={40} color="#000"
+                            onPress={() => this.props.navigation.goBack()} />
                     </View>
                 </View>
                 <Text style={styles.title}>Shopping Cart</Text>
@@ -112,7 +96,7 @@ export default class shoppingCart extends React.Component {
                         </View>
                         <View style={styles.border}></View>
                     </View>
-                    <TouchableOpacity onPress = {() => {this.props.navigation.navigate('#')}} style={styles.checkoutView}>
+                    <TouchableOpacity onPress = {() => {this.props.navigation.navigate('completeOrder')}} style={styles.checkoutView}>
                         <Text style={styles.checkout}>CHECKOUT</Text>
                     </TouchableOpacity>
                 </ScrollView>

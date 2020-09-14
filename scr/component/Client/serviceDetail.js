@@ -2,13 +2,9 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, FlatList, TextInput, ScrollView, ImageBackground, TouchableOpacity, } from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import Color from './../../constant/color';
-import AntIcon from 'react-native-vector-icons/AntDesign'
 import IcIcon from 'react-native-vector-icons/MaterialIcons'
-import Music from 'react-native-vector-icons/Ionicons'
 import Down from 'react-native-vector-icons/Feather'
 import Star from 'react-native-vector-icons/Entypo'
-import Share from 'react-native-vector-icons/Entypo'
-import Send from 'react-native-vector-icons/MaterialIcons'
 import { SliderBox } from "react-native-image-slider-box";
 
 export default class serviceDetail extends React.Component {
@@ -46,7 +42,7 @@ export default class serviceDetail extends React.Component {
                     <View style={{ marginHorizontal: wp('5%'), marginTop: hp('2%'), }}>
                         <IcIcon style={{ marginLeft: -10, marginTop: -5, }} name={'keyboard-arrow-left'} size={40} color="#000"
                             onPress={
-                                () => this.props.navigation.navigate('#')} />
+                                () => this.props.navigation.goBack()} />
                     </View>
                 </View>
                 <ScrollView>
@@ -91,11 +87,11 @@ export default class serviceDetail extends React.Component {
                     <Text style={styles.productName}>Bridal Artist</Text>
 
                     <TouchableOpacity style={styles.button}
-                        onPress={() => this.props.navigation.navigate('tab')}>
+                        onPress={() => this.props.navigation.navigate('reserveDate')}>
                         <Text style={{ fontWeight: 'bold', fontSize: 15, color: Color.Mustard }}>RESERVE</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.button}
-                        onPress={() => this.props.navigation.navigate('tab')}>
+                        onPress={() => this.props.navigation.navigate('#')}>
                         <Text style={{ fontWeight: 'bold', fontSize: 15, color: Color.Mustard }}>MESSAGE</Text>
                     </TouchableOpacity>
                     <View style={{ marginHorizontal: wp('5%'), }}>
@@ -146,7 +142,6 @@ export default class serviceDetail extends React.Component {
                                         <Star style={{}} name={'star'} size={22} color={Color.star}
                                             onPress={() => this.props.navigation.navigate('#')} />
                                     </View>
-
                                 </View>
                                 <Text style={{ marginLeft: wp('5%'), marginTop: hp('1%'), fontSize: 12 }}>Very Good Very Skilled</Text>
                             </View>
@@ -170,7 +165,6 @@ export default class serviceDetail extends React.Component {
                                 <Down style={{ alignSelf: 'center', marginTop: hp('3%'), }} name={'chevrons-down'} size={22} color="#000"
                                     onPress={() => this.props.navigation.navigate('#')} />
                             </View>
-
                         </View>
                         <View style={[styles.leaveView, shadow]}>
                             <Image source={require('./../../image/user2.jpg')} style={{ width: 20, marginHorizontal: wp('4%'), borderRadius: 30, width: 30, height: 30 }} />
@@ -179,10 +173,8 @@ export default class serviceDetail extends React.Component {
                     </View>
                 </ScrollView>
             </View>
-
         );
     }
-
 }
 const shadow = {
     shadowColor: '#30C1DD',

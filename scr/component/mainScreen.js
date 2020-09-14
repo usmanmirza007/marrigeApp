@@ -10,12 +10,12 @@ export default class mainScreen extends Component {
             <View style={styles.container}>
                     <Image source={require('./../image/Logo.png')} style={styles.imageSecond} resizeMode='stretch' />
                     <TouchableOpacity style={{alignItems: 'center', justifyContent: 'center',  borderWidth: 2, marginBottom: hp('2%'), borderColor: Color.black, borderRadius: 5, height: 50,  width: '90%', }}
-                        onPress={() => this.props.navigation.navigate('selection_signUp')}>
-                        <Text style={{ fontWeight: 'bold', fontSize: 15, color: Color.Mustard }}>SIGN UP</Text>
+                        onPress={() => this.props.navigation.navigate('mainScreenService')}>
+                        <Text style={{ fontWeight: 'bold', fontSize: 15, color: Color.Mustard }}>SERVICES</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={{alignItems: 'center', justifyContent: 'center',  borderWidth: 2, borderColor: Color.black, borderRadius: 5, height: 50,  width: '90%', }}
-                        onPress={() => this.props.navigation.navigate('selection_signIn')}>
-                        <Text style={{ fontWeight: 'bold', fontSize: 15, color: Color.Mustard }}>SIGN IN</Text>
+                        onPress={() => this.props.navigation.navigate('mainScreenClient')}>
+                        <Text style={{ fontWeight: 'bold', fontSize: 15, color: Color.Mustard }}>CLIENT</Text>
                     </TouchableOpacity>
             </View>
         );

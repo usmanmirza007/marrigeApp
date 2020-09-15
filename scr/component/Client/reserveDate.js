@@ -11,24 +11,11 @@ export default class reserveDate extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedStartDate: null,
-
             chooseDate: '',
             isVisibleDate: false,
-            chooseTime: '',
-            isVisibleTime: false
         };
-        this.onDateChange = this.onDateChange.bind(this);
     }
-    onDateChange(date) {
-        this.setState({
-            selectedStartDate: date,
-        });
-        console.log(this.state.selectedStartDate)
-
-    }
-
-  handlePicker = (date) => {
+    handlePicker = (date) => {
         this.setState({
             isVisibleDate: false,
             chooseDate: moment(date).format('MM-DD-YYYY')
@@ -58,12 +45,12 @@ export default class reserveDate extends React.Component {
                     </View>
                 </View>
                 <ScrollView>
-                <Image source={require('./../../image/user2.jpg')} style={styles.check} resizeMode='stretch' />
+                    <Image source={require('./../../image/user2.jpg')} style={styles.check} resizeMode='stretch' />
 
-                   <TouchableOpacity style={[styles.input1, shadow]} onPress={this.showPicker}>
+                    <TouchableOpacity style={[styles.input1, shadow]} onPress={this.showPicker}>
                         <TextInput
                             style={{ alignSelf: 'center', color: '#000', fontWeight: '500', }}
-                            
+
                             //   label='Offer Description'
                             placeholder="Select Date"
                             placeholderTextColor={'#000'}
@@ -91,7 +78,7 @@ export default class reserveDate extends React.Component {
                         mode={'date'}
                         datePickerModeAndroid={'spinner'}
                     />
-                     <TouchableOpacity onPress = {() => {this.props.navigation.navigate('reserveTime')}} style={styles.checkoutView}>
+                    <TouchableOpacity onPress={() => { this.props.navigation.navigate('reserveTime') }} style={styles.checkoutView}>
                         <Text style={styles.checkout}>RESERVE DATE</Text>
                     </TouchableOpacity>
                 </ScrollView>
@@ -136,7 +123,7 @@ const styles = StyleSheet.create({
         height: 50,
         marginHorizontal: wp('5%'),
     },
-    check:{
+    check: {
         width: '100%',
         height: 200,
         borderBottomRightRadius: 50,
@@ -150,7 +137,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         marginTop: hp('-20%'),
     },
-    checkoutView:{
+    checkoutView: {
         borderWidth: 2,
         borderColor: Color.black,
         marginHorizontal: wp('5%'),
@@ -162,7 +149,7 @@ const styles = StyleSheet.create({
         marginTop: hp('5%'),
 
     },
-    checkout:{
+    checkout: {
         color: Color.black,
         fontWeight: '700'
     }

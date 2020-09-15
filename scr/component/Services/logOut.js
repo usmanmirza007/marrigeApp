@@ -12,9 +12,13 @@ export default class logOut extends Component {
             <KeyboardAvoidingView style={styles.checkoutContainer}>
 
                 <View style={{ height: hp('9%'), }}>
-                    <View style={{ marginHorizontal: wp('5%'), marginTop: hp('2%'), }}>
-                        <Back style={{ marginLeft: -10, marginTop: -5, }} name={'keyboard-arrow-left'} size={40} color="#000"
-                            onPress={() => this.props.navigation.goBack()} />
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: wp('5%'), marginTop: hp('2%'), }}>
+                        <Image source={require('./../../image/Logo.png')} style={{ width: 20, marginLeft: wp('4%'), width: 40, height: 40 }} />
+                        <View style={{ flexDirection: 'row' }}>
+                            <TouchableOpacity onPress={() => this.props.navigation.navigate('mainScreen')}>
+                                <Text>LOGOUT</Text>
+                            </TouchableOpacity>
+                        </View>
                     </View>
                 </View>
                 <ScrollView>

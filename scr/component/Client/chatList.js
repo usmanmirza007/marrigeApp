@@ -9,41 +9,37 @@ export default class chatList extends React.Component {
         super(props);
         this.state = {
             userData: [
-                { image: require('./../../image/user2.jpg'), name: 'Jhon Doe', time: '8:40 PM', },
-                { image: require('./../../image/user2.jpg'), name: 'Jhon Doe', time: '8:40 PM', },
-                { image: require('./../../image/user2.jpg'), name: 'Jhon Doe', time: '8:40 PM', },
-                { image: require('./../../image/user2.jpg'), name: 'Jhon Doe', time: '8:40 PM', },
-                { image: require('./../../image/user2.jpg'), name: 'Jhon Doe', time: '8:40 PM', },
-                { image: require('./../../image/user2.jpg'), name: 'Jhon Doe', time: '8:40 PM', },
-                { image: require('./../../image/user2.jpg'), name: 'Jhon Doe', time: '8:40 PM', },
-                { image: require('./../../image/user2.jpg'), name: 'Jhon Doe', time: '8:40 PM', },
-                { image: require('./../../image/user2.jpg'), name: 'Jhon Doe', time: '8:40 PM', },
+                { image: require('./../../image/user2.jpg'), name: 'Jhon Doe', time: '8:40 PM', text: 'Ipsum dollar sit, amet' },
+                { image: require('./../../image/user2.jpg'), name: 'Jhon Doe', time: '8:40 PM', text: 'Ipsum dollar sit, amet' },
+                { image: require('./../../image/user2.jpg'), name: 'Jhon Doe', time: '8:40 PM', text: 'Ipsum dollar sit, amet' },
+                { image: require('./../../image/user2.jpg'), name: 'Jhon Doe', time: '8:40 PM', text: 'Ipsum dollar sit, amet' },
+                { image: require('./../../image/user2.jpg'), name: 'Jhon Doe', time: '8:40 PM', text: 'Ipsum dollar sit, amet' },
+                { image: require('./../../image/user2.jpg'), name: 'Jhon Doe', time: '8:40 PM', text: 'Ipsum dollar sit, amet' },
+                { image: require('./../../image/user2.jpg'), name: 'Jhon Doe', time: '8:40 PM', text: 'Ipsum dollar sit, amet' },
+                { image: require('./../../image/user2.jpg'), name: 'Jhon Doe', time: '8:40 PM', text: 'Ipsum dollar sit, amet' },
+                { image: require('./../../image/user2.jpg'), name: 'Jhon Doe', time: '8:40 PM', text: 'Ipsum dollar sit, amet' },
 
             ]
         };
     }
     renderRow = ({ item }) => {
         return (
-            <View >
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('chat')}>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
                     <View>
                         <View style={styles.viewjhon}>
                             <Image style={{ height: 50, width: 50, borderRadius: 50 / 2, marginRight: 10, }}
-                                source={require('./../../image/user2.jpg')} />
+                                source={item.image} />
                             <View style={{ justifyContent: 'center', }}>
-                                <Text>Jhon Doe</Text>
-                                <Text style={{ color: '#EEBC26' }}>Ipsum dollar sit, amet </Text>
+                                <Text>{item.name}</Text>
+                                <Text style={{ color: '#EEBC26' }}>{item.text}</Text>
                             </View>
                         </View>
                     </View>
-                    <View>
-                        <Text style={{ fontSize: 12, color: '#fff' }}>8:10 PM </Text>
-                    </View>
-
+                        <Text style={{ fontSize: 12, color: '#fff' }}>{item.time}</Text>
                 </View>
-                <View style={{ borderBottomColor: '#fff', borderBottomWidth: 2 }}>
-                </View>
-            </View>
+                <View style={{ borderBottomColor: '#fff', borderBottomWidth: 2 }}></View>
+            </TouchableOpacity>
         )
     }
     render() {

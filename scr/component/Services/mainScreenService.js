@@ -11,7 +11,7 @@ export default class mainScreenClient extends Component {
                     <Image source={require('./../../image/Logo.png')} style={styles.imageSecond} resizeMode='stretch' />
                     <TouchableOpacity style={{alignItems: 'center', justifyContent: 'center',  borderWidth: 2, marginBottom: hp('2%'), borderColor: Color.black, borderRadius: 5, height: 50,  width: '90%', }}
                         onPress={() => this.props.navigation.navigate('signUpService')}>
-                        <Text style={{ fontWeight: 'bold', fontSize: 15, color: Color.Mustard }}>SIGN UP s</Text>
+                        <Text style={{ fontWeight: 'bold', fontSize: 15, color: Color.Mustard }}>SIGN UP</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={{alignItems: 'center', justifyContent: 'center',  borderWidth: 2, borderColor: Color.black, borderRadius: 5, height: 50,  width: '90%', }}
                         onPress={() => this.props.navigation.navigate('signInService')}>

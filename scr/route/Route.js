@@ -2,8 +2,7 @@ import {createStackNavigator} from 'react-navigation-stack';
 import SafeAreaView from 'react-native-safe-area-context';
 import { createAppContainer } from 'react-navigation';
 import mainScreen from './../component/mainScreen';
-import dashBoardBottomClent from './dashBoardBottomClient';
-import mainScreenService from '../component/Client/mainScreenService';
+import mainScreenService from '../component/Services/mainScreenService';
 import mainScreenClient from '../component/Client/mainScreenClient';
 import signUpClient from '../component/Client/signUpClient';
 import signInClient from '../component/Client/signInClient';
@@ -13,6 +12,7 @@ import serviceDetail from '../component/Client/serviceDetail';
 import reserveDate from '../component/Client/reserveDate';
 import reserveTime from '../component/Client/reserveTime';
 import chatList from '../component/Client/chatList';
+import chat from '../component/Services/chat';
 import reserveSuccess from '../component/Client/reserveSuccess';
 import completeOrder from '../component/Client/comleteOrder';
 import signInService from '../component/Services/signInService';
@@ -46,6 +46,12 @@ const Route =  createStackNavigator({
     },
     chatList: {
         screen: chatList,
+        navigationOptions: {
+            headerShown: false
+        },
+    },
+    chat: {
+        screen: chat,
         navigationOptions: {
             headerShown: false
         },

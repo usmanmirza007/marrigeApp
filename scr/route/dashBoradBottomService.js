@@ -19,7 +19,7 @@ const TabScreens = createMaterialBottomTabNavigator({
     services:{
         screen: services,
         navigationOptions: {
-            tabBarLabel: "Services",
+            tabBarLabel: "Home",
             tabBarIcon: ({ tintColor }) => (
                 <Home style={{ marginLeft: wp('0%'), }} name={'home-heart'} size={24} color={tintColor}
                 onPress={ () => this.props.navigation.navigate('#')} />
@@ -39,7 +39,7 @@ const TabScreens = createMaterialBottomTabNavigator({
     reservationsService:{
         screen: reservationsService,
         navigationOptions: {
-            tabBarLabel: "Reservations",
+            tabBarLabel: "Booking",
             tabBarIcon: ({ tintColor }) => (
                 <Calendar style={{ marginLeft: wp('0%'), }} name={'calendar-heart'} size={24} color={tintColor}
                 onPress={ () => this.props.navigation.navigate('#')} />
@@ -49,7 +49,7 @@ const TabScreens = createMaterialBottomTabNavigator({
     checkListService:{
         screen: checkListService,
         navigationOptions: {
-            tabBarLabel: "Check List",
+            tabBarLabel: "Reviews",
             tabBarIcon: ({ tintColor }) => (
                 <Check style={{ marginLeft: wp('0%'), }} name={'comment-check-outline'} size={24} color={tintColor}
                 onPress={ () => this.props.navigation.navigate('#')} />

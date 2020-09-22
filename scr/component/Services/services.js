@@ -16,7 +16,8 @@ export default class services extends Component {
             <View style={styles.container}>
                 <View style={{ height: hp('9%'), }}>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: wp('5%'), marginTop: hp('2%'), }}>
-                        <Image source={require('./../../image/Logo.png')} style={{ width: 20, marginLeft: wp('4%'), width: 40, height: 40 }} />
+                        {/* <Image source={require('./../../image/headerlogo.png')} style={{ width: 20, marginLeft: wp('4%'), width: 150, height: 40 }} /> */}
+                        <View></View>
                         <View style={{ flexDirection: 'row' }}>
                             <TouchableOpacity onPress={() => this.props.navigation.navigate('chatList')}>
                                 <Chat style={{ marginLeft: wp('0%'), }} name={'chatbubble-outline'} size={24} color="#000" />
@@ -30,30 +31,54 @@ export default class services extends Component {
                 <ScrollView>
                     <View style={{ marginHorizontal: wp('5%'), }}>
                         <Text style={{marginVertical: hp('2%'), fontWeight: 'bold'}}>Upcoming Bookings</Text>
-                        <TouchableOpacity style={[styles.mainCart]}>
-                            <View style={{ flexDirection: 'row' }}>
-                                <Image source={require('./../../image/user2.jpg')} style={styles.imageSecond} resizeMode='stretch' />
-                                <View style={styles.heartView}>
-                                    <View>
+                        <TouchableOpacity style={[styles.mainCart,Color.shadow]}>
+                            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                                <View style={{ flexDirection: 'row' }}>
+                                    <Image source={require('./../../image/user2.jpg')} style={styles.imageSecond} resizeMode='stretch' />
+                                    <View style={{ marginLeft: '5%', }}>
                                         <Text style={styles.name}>Product Name</Text>
-                                        <Text style={styles.price}>Date: 12-04-2020</Text>
+                                        <Text style={styles.price}>$354.125</Text>
                                         <Text style={styles.price}>Time: 13:00</Text>
+
                                     </View>
+                                </View>
+                                <View style={{ justifyContent: 'flex-end' }}>
                                     <TouchableOpacity style={styles.CANCEL}>
                                         <Text style={{ fontSize: 12 }}>CANCEL</Text>
                                     </TouchableOpacity>
                                 </View>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity style={[styles.mainCart]}>
-                            <View style={{ flexDirection: 'row' }}>
-                                <Image source={require('./../../image/user2.jpg')} style={styles.imageSecond} resizeMode='stretch' />
-                                <View style={styles.heartView}>
-                                    <View>
+                        <TouchableOpacity style={[styles.mainCart,Color.shadow]}>
+                            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                                <View style={{ flexDirection: 'row' }}>
+                                    <Image source={require('./../../image/user2.jpg')} style={styles.imageSecond} resizeMode='stretch' />
+                                    <View style={{ marginLeft: '5%', }}>
                                         <Text style={styles.name}>Product Name</Text>
-                                        <Text style={styles.price}>Date: 12-04-2020</Text>
+                                        <Text style={styles.price}>$354.125</Text>
                                         <Text style={styles.price}>Time: 13:00</Text>
+
                                     </View>
+                                </View>
+                                <View style={{ justifyContent: 'flex-end' }}>
+                                    <TouchableOpacity style={styles.CANCEL}>
+                                        <Text style={{ fontSize: 12 }}>CANCEL</Text>
+                                    </TouchableOpacity>
+                                </View>
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={[styles.mainCart,Color.shadow]}>
+                            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                                <View style={{ flexDirection: 'row' }}>
+                                    <Image source={require('./../../image/user2.jpg')} style={styles.imageSecond} resizeMode='stretch' />
+                                    <View style={{ marginLeft: '5%', }}>
+                                        <Text style={styles.name}>Product Name</Text>
+                                        <Text style={styles.price}>$354.125</Text>
+                                        <Text style={styles.price}>Time: 13:00</Text>
+
+                                    </View>
+                                </View>
+                                <View style={{ justifyContent: 'flex-end' }}>
                                     <TouchableOpacity style={styles.CANCEL}>
                                         <Text style={{ fontSize: 12 }}>CANCEL</Text>
                                     </TouchableOpacity>
@@ -77,7 +102,7 @@ const styles = StyleSheet.create({
     inputView: {
         flexDirection: 'row',
         borderRadius: 5,
-        backgroundColor: Color.LightMustard,
+        backgroundColor: Color.Lightgreen,
         marginBottom: hp('3%'),
     },
     input: {
@@ -89,18 +114,15 @@ const styles = StyleSheet.create({
         fontWeight: '500',
     },
     CANCEL: {
-        backgroundColor: Color.Mustard,
+        backgroundColor: Color.green,
         width: wp('25%'),
-        marginLeft: wp('25%'),
         height: hp('5%'),
         borderRadius: 10,
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: hp('2%'),
     },
     mainCart: {
-        backgroundColor: Color.Pink,
-        // height: hp('17%'),
+        backgroundColor: Color.grey,
         borderRadius: 5,
         padding: 10,
         marginBottom: hp('2%'),
@@ -108,11 +130,9 @@ const styles = StyleSheet.create({
     imageSecond: {
         width: 80,
         height: 100,
-        //  marginRight: 10, 
         borderRadius: 10,
     },
     heartView: {
-        // flexDirection: 'row',
         marginLeft: wp('5%'),
     },
     name: {

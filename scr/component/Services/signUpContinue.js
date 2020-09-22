@@ -20,13 +20,13 @@ export default class signUpContinue extends Component {
         return (
             <View style={styles.container}>
                 <ScrollView>
-                     <View style={{marginTop: hp('10%'),}}>
+                     <View style={{marginVertical: hp('10%'),}}>
                      <TextInput
                         style={styles.input}
                         mode='outlined'
                         theme={{
                             colors: {
-                                primary: '#000',
+                                primary: '#5AA9A3',
                             }
                         }}
                         label='Company Name'
@@ -40,7 +40,7 @@ export default class signUpContinue extends Component {
                         mode='outlined'
                         theme={{
                             colors: {
-                                primary: '#000',
+                                primary: '#5AA9A3',
                             }
                         }}
                         label='Address'
@@ -54,7 +54,7 @@ export default class signUpContinue extends Component {
                         mode='outlined'
                         theme={{
                             colors: {
-                                primary: '#000',
+                                primary: '#5AA9A3',
                             }
                         }}
                         label='Description'
@@ -68,7 +68,7 @@ export default class signUpContinue extends Component {
                         mode='outlined'
                         theme={{
                             colors: {
-                                primary: '#000',
+                                primary: '#5AA9A3',
                             }
                         }}
                         label='Mobile Number'
@@ -78,10 +78,12 @@ export default class signUpContinue extends Component {
                         onChangeText={fname => this.setState({ fname })}
                     />
                      </View>
-                   <TouchableOpacity style={{ alignItems: 'center', justifyContent: 'center', marginTop: hp('10%'), borderWidth: 2, marginBottom: hp('2%'), borderColor: Color.black, borderRadius: 5, height: 50, marginHorizontal: wp('5%'), }}
-                        onPress={() => this.props.navigation.navigate('signUpContinueLast')}>
-                        <Text style={{ fontWeight: 'bold', fontSize: 15, color: Color.Mustard }}>CONTINUE</Text>
-                    </TouchableOpacity>
+                    <ImageBackground source={require('./../../image/asset.png')} style={{ width: '100%', height: 200, flex: 1 }} resizeMode='stretch'>
+                        <TouchableOpacity style={{ alignItems: 'center', justifyContent: 'center', borderWidth: 2, marginTop: hp('15%'), borderColor: Color.black, borderRadius: 5, height: 50, marginHorizontal: wp('5%'), }}
+                            onPress={() => this.props.navigation.navigate('signUpContinueLast')}>
+                            <Text style={{ fontWeight: 'bold', fontSize: 15, color: Color.black }}>CONTINUE</Text>
+                        </TouchableOpacity>
+                    </ImageBackground >
                 </ScrollView>
             </View>
         );
@@ -114,7 +116,6 @@ const styles = StyleSheet.create({
         // marginTop: wp('12%'),
         marginHorizontal: wp('5%'),
         backgroundColor: '#fff',
-        width: wp('90%'),
         marginBottom: hp('2%'),
     },
     radioButton: {

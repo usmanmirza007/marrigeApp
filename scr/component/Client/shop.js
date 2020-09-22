@@ -12,11 +12,11 @@ export default class shop extends Component {
         this.state = {
             imagesMost: [
                 { key: 1, image: require('./../../image/gift.png') },
-                { key: 2, image: require('./../../image/gift1.jpg') },
-                { key: 3, image: require('./../../image/gift2.png') },
-                { key: 4, image: require('./../../image/gift1.jpg') },
+                { key: 2, image: require('./../../image/gift.png') },
+                { key: 3, image: require('./../../image/gift.png') },
+                { key: 4, image: require('./../../image/gift.png') },
                 { key: 5, image: require('./../../image/gift.png') },
-                { key: 6, image: require('./../../image/gift1.jpg') },
+                { key: 6, image: require('./../../image/gift.png') },
             ]
         };
     }
@@ -26,7 +26,8 @@ export default class shop extends Component {
             <View style={styles.container}>
                 <View style={{ height: hp('9%'), }}>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: wp('5%'), marginTop: hp('2%'), }}>
-                        <Image source={require('./../../image/Logo.png')} style={{ width: 20, marginLeft: wp('4%'), width: 40, height: 40 }} />
+                        {/* <Image source={require('./../../image/Logo.png')} style={{ width: 20, marginLeft: wp('4%'), width: 40, height: 40 }} /> */}
+                        <View></View>
                         <View style={{ flexDirection: 'row' }}>
                             <TouchableOpacity onPress={() => this.props.navigation.navigate('chatList')}>
                                 <Chat style={{ marginLeft: wp('0%'), }} name={'chatbubble-outline'} size={24} color="#000" />
@@ -41,17 +42,19 @@ export default class shop extends Component {
                     </View>
                 </View>
                 <ScrollView>
-                    <View style={{ marginHorizontal: wp('5%'), }}>
-                        <View style={styles.inputView}>
+                    <View style={{ marginHorizontal: wp('5%'),}}>
+                        <View style={[styles.inputView, shadow]}>
                             <TextInput
                                 style={styles.input}
                                 placeholder="Search Results"
                                 placeholderTextColor={Color.greyPrimray}
                                 value={this.state.chooseDate}
                                 onChangeText={chooseDate => this.setState({ chooseDate })} />
-                            <FeaIcon style={{ alignSelf: 'center' }} name={'search'} size={24} color={Color.greyPrimray}
+                            <View style={{justifyContent: 'center',}}>
+                            <FeaIcon style={{  marginRight: 20, }} name={'search'} size={24} color={Color.black}
                                 onPress={
                                     () => this.props.navigation.navigate('#')} />
+                            </View>
                         </View>
                         <FlatList
                             numColumns={2}
@@ -69,6 +72,16 @@ export default class shop extends Component {
         );
     }
 }
+const shadow = {
+    shadowColor: '#30C1DD',
+    shadowRadius: 10,
+    shadowOpacity: 0.6,
+    elevation: 8,
+    shadowOffset: {
+        width: 0,
+        height: 4
+    }
+}
 
 const styles = StyleSheet.create({
     container: {
@@ -79,16 +92,16 @@ const styles = StyleSheet.create({
     },
     inputView: {
         flexDirection: 'row',
+        justifyContent: 'space-between',
         borderRadius: 5,
-        backgroundColor: Color.LightMustard,
-        marginBottom: hp('3%'),
+        backgroundColor: Color.grey,
+        marginVertical: hp('3%'),
     },
     input: {
         alignSelf: 'center',
         paddingLeft: 10,
         color: '#000',
         height: 35,
-        width: 250,
         fontWeight: '500',
     },
     homeImage: {
@@ -96,7 +109,7 @@ const styles = StyleSheet.create({
         height: 130,
         marginRight: wp('5%'),
         marginBottom: hp('3%'),
-        borderRadius: 20
+        borderRadius: 20,
     },
 });
 

@@ -21,17 +21,19 @@ export default class signUpContinue extends Component {
         return (
             <View style={styles.container}>
                 <ScrollView>
-                    <View style={{ alignItems: 'center', marginTop: hp('15%'), }}>
+                    <View style={{ alignItems: 'center', marginTop: hp('15%'),marginBottom: 100 }}>
                         <Text style={styles.add}>ADD PHOTO</Text>
                         <TouchableOpacity style={styles.imagePicker}>
                             <Calendar style={{ marginLeft: wp('0%'), }} name={'camera'} size={24} color='#fff'
                                 onPress={() => this.props.navigation.navigate('#')} />
                         </TouchableOpacity>
                     </View>
-                    <TouchableOpacity style={{ alignItems: 'center', justifyContent: 'center', marginTop: hp('20%'), borderWidth: 2, marginBottom: hp('2%'), borderColor: Color.black, borderRadius: 5, height: 50, marginHorizontal: wp('5%'), }}
-                        onPress={() => this.props.navigation.navigate('tab2')}>
-                        <Text style={{ fontWeight: 'bold', fontSize: 15, color: Color.Mustard }}>CONTINUE</Text>
-                    </TouchableOpacity>
+                    <ImageBackground source={require('./../../image/asset.png')} style={{ width: '100%', height: 200, }} resizeMode='stretch'>
+                        <TouchableOpacity style={{ alignItems: 'center', justifyContent: 'center', borderWidth: 2, marginTop: hp('15%'), borderColor: Color.black, borderRadius: 5, height: 50, marginHorizontal: wp('5%'), }}
+                            onPress={() => this.props.navigation.navigate('tab2')}>
+                            <Text style={{ fontWeight: 'bold', fontSize: 15, color: Color.black }}>CONTINUE</Text>
+                        </TouchableOpacity>
+                    </ImageBackground >
                 </ScrollView>
             </View>
         );
@@ -56,7 +58,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     add:{
-        color: Color.Mustard,
+        color: Color.green,
         marginBottom: hp('3%'),
         fontWeight: '700'
     }

@@ -32,7 +32,7 @@ export default class signUpService extends Component {
                         mode='outlined'
                         theme={{
                             colors: {
-                                primary: '#000',
+                                primary: '#5AA9A3',
                             }
                         }}
                         label='Full Name'
@@ -46,7 +46,7 @@ export default class signUpService extends Component {
                         mode='outlined'
                         theme={{
                             colors: {
-                                primary: '#000',
+                                primary: '#5AA9A3',
                             }
                         }}
                         label='Email Address'
@@ -60,7 +60,7 @@ export default class signUpService extends Component {
                         mode='outlined'
                         theme={{
                             colors: {
-                                primary: '#000',
+                                primary: '#5AA9A3',
                             }
                         }}
                         label='Password'
@@ -69,11 +69,14 @@ export default class signUpService extends Component {
                         value={this.state.fname}
                         onChangeText={fname => this.setState({ fname })}
                     />
-                    <Text style={{marginLeft: wp('5%'), marginVertical: hp('3%'), }}>Already have an account? <Text style={{textDecorationLine: 'underline', color: Color.Mustard}} onPress={() => this.props.navigation.navigate('signInService')}>Sign In</Text></Text>
-                    <TouchableOpacity style={{ alignItems: 'center', justifyContent: 'center', borderWidth: 2, marginBottom: hp('2%'), borderColor: Color.black, borderRadius: 5, height: 50, marginHorizontal: wp('5%'), }}
-                        onPress={() => this.props.navigation.navigate('signUpContinue')}>
-                        <Text style={{ fontWeight: 'bold', fontSize: 15, color: Color.Mustard }}>CONTINUE</Text>
-                    </TouchableOpacity>
+                    <Text style={{marginLeft: wp('5%'), marginVertical: hp('3%'), }}>Already have an account? <Text style={{textDecorationLine: 'underline', color: Color.green}} onPress={() => this.props.navigation.navigate('signInService')}>Sign In</Text></Text>
+                    
+                    <ImageBackground source={require('./../../image/asset.png')} style={{ width: '100%', height: 150 }} resizeMode='stretch'>
+                        <TouchableOpacity style={{ alignItems: 'center', justifyContent: 'center', borderWidth: 2, marginTop: hp('10%'), borderColor: Color.black, borderRadius: 5, height: 50, marginHorizontal: wp('5%'), }}
+                            onPress={() => this.props.navigation.navigate('signUpContinue')}>
+                            <Text style={{ fontWeight: 'bold', fontSize: 15, color: Color.black }}>CONTINUE</Text>
+                        </TouchableOpacity>
+                    </ImageBackground >
                 </ScrollView>
             </View>
         );
@@ -106,7 +109,6 @@ const styles = StyleSheet.create({
         // marginTop: wp('12%'),
         marginHorizontal: wp('5%'),
         backgroundColor: '#fff',
-        width: wp('90%'),
         marginBottom: hp('2%'),
     },
     radioButton: {

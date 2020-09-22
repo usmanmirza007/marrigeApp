@@ -25,20 +25,19 @@ export default class chatList extends React.Component {
     renderRow = ({ item }) => {
         return (
             <TouchableOpacity onPress={() => this.props.navigation.navigate('chat')}>
-                <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', backgroundColor: Color.grey, paddingHorizontal: 10, marginTop: 0, marginHorizontal: '2%', alignItems: 'center' }}>
                     <View>
                         <View style={styles.viewjhon}>
                             <Image style={{ height: 50, width: 50, borderRadius: 50 / 2, marginRight: 10, }}
                                 source={item.image} />
                             <View style={{ justifyContent: 'center', }}>
                                 <Text>{item.name}</Text>
-                                <Text style={{ color: '#EEBC26' }}>{item.text}</Text>
+                                <Text style={{ color: Color.green }}>{item.text}</Text>
                             </View>
                         </View>
                     </View>
-                        <Text style={{ fontSize: 12, color: '#fff' }}>{item.time}</Text>
+                        <Text style={{ fontSize: 12, color: '#000' }}>{item.time}</Text>
                 </View>
-                <View style={{ borderBottomColor: '#fff', borderBottomWidth: 2 }}></View>
             </TouchableOpacity>
         )
     }
@@ -48,7 +47,8 @@ export default class chatList extends React.Component {
 
                 <View style={{ height: hp('9%'), }}>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: wp('5%'), marginTop: hp('2%'), }}>
-                        <Image source={require('./../../image/Logo.png')} style={{ width: 20, marginLeft: wp('4%'), width: 40, height: 40 }} />
+                        {/* <Image source={require('./../../image/Logo.png')} style={{ width: 20, marginLeft: wp('4%'), width: 40, height: 40 }} /> */}
+                        <View></View>
                         <View style={{ flexDirection: 'row' }}>
                             <TouchableOpacity onPress={() => this.props.navigation.navigate('checkOut')}>
                                 <Image source={require('./../../image/cart.png')} style={{ width: 20, marginLeft: wp('4%'), }} />
@@ -80,7 +80,6 @@ export default class chatList extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#F9E5EE',
 
     },
     main: {

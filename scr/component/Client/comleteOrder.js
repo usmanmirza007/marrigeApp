@@ -7,6 +7,7 @@ import Left from 'react-native-vector-icons/AntDesign';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import Back from 'react-native-vector-icons/MaterialIcons'
 import Color from './../../constant/color';
+import { shadow } from 'react-native-paper';
 
 export default class completeOrder extends Component {
     render() {
@@ -21,7 +22,7 @@ export default class completeOrder extends Component {
                 <ScrollView>
                     <View style={styles.maincontainer}>
                         <Text style={styles.textcheckout}>Personal Information</Text>
-                        <View style={styles.textinputcontainer}>
+                        <View style={[styles.textinputcontainer, Color.shadow]}>
                             <TextInput style={styles.textinput1}
                                 autoCompleteType="name"
                                 keyboardType="email-address"
@@ -44,7 +45,7 @@ export default class completeOrder extends Component {
                             />
                         </View>
                         <Text style={styles.textcheckout}>Bank Account Details</Text>
-                        <View style={styles.regioncontainer}>
+                        <View style={[styles.regioncontainer, Color.shadow]}>
 
                             <TextInput style={styles.textinput1}
                                 autoCompleteType="name"
@@ -70,7 +71,7 @@ export default class completeOrder extends Component {
 
                             />
                         </View>
-                        <TouchableOpacity onPress={() => { this.props.navigation.navigate('services') }} style={styles.checkoutView}>
+                        <TouchableOpacity onPress={() => { this.props.navigation.navigate('servicesClient') }} style={styles.checkoutView}>
                             <Text style={styles.checkout}>COMPLETE ORDER</Text>
                         </TouchableOpacity>
                     </View>
@@ -94,17 +95,17 @@ const styles = StyleSheet.create({
     textinputcontainer: {
         marginVertical: hp('2%'),
         borderRadius: 5,
-        backgroundColor: '#F9E5EE',
+        backgroundColor: Color.grey,
     },
 
     regioncontainer: {
         marginTop: 10,
         marginBottom: 20,
         borderRadius: 5,
-        backgroundColor: '#F9E5EE',
+        backgroundColor: Color.grey,
     },
     textcheckout: {
-        color: '#EEBC26',
+        color: Color.green,
         fontSize: 20,
     },
     textinput1: {
@@ -123,7 +124,7 @@ const styles = StyleSheet.create({
         marginBottom: hp('3%'),
     },
     checkout: {
-        color: Color.Mustard,
+        color: Color.green,
         fontWeight: '700'
     }
 })

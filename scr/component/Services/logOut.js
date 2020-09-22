@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { View, StatusBar, ImageBackground, Image, ScrollView, KeyboardAvoidingView, Text, Button, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, StatusBar, ImageBackground, Image, ScrollView, KeyboardAvoidingView, Text, Button, TouchableOpacity, StyleSheet, ColorPropType } from 'react-native';
 import { Icon, Input, } from 'react-native-elements';
 import { TextInput } from 'react-native-gesture-handler';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import Camera from 'react-native-vector-icons/SimpleLineIcons'
-import Back from 'react-native-vector-icons/MaterialIcons'
-
+import Color from './../../constant/color';
 export default class logOut extends Component {
     render() {
         return (
@@ -13,7 +12,8 @@ export default class logOut extends Component {
 
                 <View style={{ height: hp('9%'), }}>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: wp('5%'), marginTop: hp('2%'), }}>
-                        <Image source={require('./../../image/Logo.png')} style={{ width: 20, marginLeft: wp('4%'), width: 40, height: 40 }} />
+                        {/* <Image source={require('./../../image/Logo.png')} style={{ width: 20, marginLeft: wp('4%'), width: 40, height: 40 }} /> */}
+                       <View></View>
                         <View style={{ flexDirection: 'row' }}>
                             <TouchableOpacity onPress={() => this.props.navigation.navigate('mainScreen')}>
                                 <Text>LOGOUT</Text>
@@ -28,11 +28,11 @@ export default class logOut extends Component {
                                 source={require('./../../image/user2.jpg')} />
                             <View style={{ borderWidth: 1, borderColor: 'grey', backgroundColor: '#fff', marginVertical: hp('-1.5%'), height: 25, width: 25, borderRadius: 25 / 2, alignItems: 'center', justifyContent: 'center' }}>
                                 <Camera
-                                    name={'camera'} size={15} color="#EEBC26" />
+                                    name={'camera'} size={15} color="#5AA9A3" />
                             </View>
                         </View>
                         {/*second View */}
-                        <View style={styles.textinputcontainer}>
+                        <View style={[styles.textinputcontainer, Color.shadow]}>
                             <TextInput style={styles.textinput1}
                                 autoCompleteType="name"
                                 keyboardType="email-address"
@@ -56,7 +56,7 @@ export default class logOut extends Component {
 
                         </View>
                         {/* View of region */}
-                        <View style={styles.regioncontainer}>
+                        <View style={[styles.regioncontainer, Color.shadow]}>
 
                             <TextInput style={styles.textinput1}
                                 autoCompleteType="name"
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
     textinputcontainer: {
         marginVertical: hp('2%'),
         borderRadius: 5,
-        backgroundColor: '#F9E5EE',
+        backgroundColor: Color.grey
 
     },
 
@@ -116,35 +116,14 @@ const styles = StyleSheet.create({
         marginTop: 10,
         marginBottom: 20,
         borderRadius: 5,
-        backgroundColor: '#F9E5EE',
-    },
-    textcheckout: {
-        color: '#EEBC26',
-        fontSize: 20,
+        backgroundColor: Color.grey
+
     },
     textinput1: {
         fontSize: 20,
         height: hp('10%'),
         marginHorizontal: wp('5%')
 
-    },
-
-    opacityview: {
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    touchableopacity1: {
-        justifyContent: 'center',
-        borderRadius: 5,
-        height: 50,
-        width: '90%',
-        borderWidth: 1
-
-    },
-    opacitytext: {
-        textAlign: 'center',
-        fontSize: 20,
-        color: '#EEBC26'
     },
 
 })

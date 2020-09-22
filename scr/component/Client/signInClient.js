@@ -25,7 +25,7 @@ export default class signInClient extends Component {
                         mode='outlined'
                         theme={{
                             colors: {
-                                primary: '#000',
+                                primary: '#5AA9A3',
                             }
                         }}
                         label='User Name'
@@ -39,7 +39,7 @@ export default class signInClient extends Component {
                         mode='outlined'
                         theme={{
                             colors: {
-                                primary: '#000',
+                                primary: '#5AA9A3',
                             }
                         }}
                         label='Password'
@@ -48,23 +48,23 @@ export default class signInClient extends Component {
                         value={this.state.fname}
                         onChangeText={fname => this.setState({ fname })}
                     />
-                    <Text style={{ marginLeft: wp('5%'), marginVertical: hp('2%'), }}>Don't have an account? <Text style={{ textDecorationLine: 'underline', color: Color.Mustard }} onPress={() => this.props.navigation.navigate('signUpClient')}>Sign Up</Text></Text>
-                    <Text style={{ alignSelf: 'center', marginTop: hp('3%'), }}>SIGN IN WITH </Text>
+                    <Text style={{ marginLeft: wp('5%'), marginVertical: hp('2%'), }}>Don't have an account? <Text style={{ textDecorationLine: 'underline', color: Color.green }} onPress={() => this.props.navigation.navigate('signUpClient')}>Sign Up</Text></Text>
+                    <Text style={{ alignSelf: 'center', marginTop: hp('1%'), }}>SIGN IN WITH </Text>
                     <View style={styles.iconView}>
                         <TouchableOpacity>
                             <Image source={require('./../../image/download.png')} style={styles.icon} resizeMode='stretch' />
-
                         </TouchableOpacity>
                         <TouchableOpacity>
                             <Image source={require('./../../image/fb.png')} style={styles.icon} resizeMode='stretch' />
-
                         </TouchableOpacity>
                     </View>
+                    <ImageBackground source={require('./../../image/asset.png')} style={{ width: '100%', height: 150 }} resizeMode='stretch'>
+                        <TouchableOpacity style={{ alignItems: 'center', justifyContent: 'center', borderWidth: 2, marginTop: hp('10%'), borderColor: Color.black, borderRadius: 5, height: 50, marginHorizontal: wp('5%'), }}
+                            onPress={() => this.props.navigation.navigate('tab')}>
+                            <Text style={{ fontWeight: 'bold', fontSize: 15, color: Color.black }}>CONTINUE</Text>
+                        </TouchableOpacity>
+                    </ImageBackground >
 
-                    <TouchableOpacity style={{ alignItems: 'center', justifyContent: 'center', borderWidth: 2, marginBottom: hp('2%'), borderColor: Color.black, borderRadius: 5, height: 50, marginHorizontal: wp('5%'), }}
-                        onPress={() => this.props.navigation.navigate('tab')}>
-                        <Text style={{ fontWeight: 'bold', fontSize: 15, color: Color.Mustard }}>CONTINUE</Text>
-                    </TouchableOpacity>
                 </ScrollView>
             </View>
         );
@@ -81,9 +81,8 @@ const styles = StyleSheet.create({
     imageSecond: {
         width: 200,
         height: 200,
-        //  marginRight: 10, 
         borderRadius: 5,
-        marginBottom: hp('5%'),
+        // marginBottom: hp('5%'),
         alignSelf: 'center'
     },
     icon: {
@@ -97,16 +96,8 @@ const styles = StyleSheet.create({
         // marginTop: wp('12%'),
         marginHorizontal: wp('5%'),
         backgroundColor: '#fff',
-        width: wp('90%'),
         marginBottom: hp('2%'),
-    },
-    radioButton: {
-        marginRight: 30,
-        marginTop: 0
-    },
-    mainRadioView: {
-        marginLeft: wp('5%'),
-        marginTop: hp('3%')
+        height: 40
     },
     choose: {
         fontSize: 15,

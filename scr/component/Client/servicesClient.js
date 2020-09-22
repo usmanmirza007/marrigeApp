@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { View, StatusBar, StyleSheet, ScrollView, FlatList, ImageBackground, Image, Text, TouchableOpacity } from 'react-native';
+import { View, StatusBar, StyleSheet, ScrollView,Dimensions, FlatList, ImageBackground, Image, Text, TouchableOpacity } from 'react-native';
 import Color from '../../constant/color';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { TextInput } from 'react-native-paper';
 import Chat from 'react-native-vector-icons/Ionicons'
-
+const Width = Dimensions.get('window').width
+const numColums = 2
 export default class servicesClient extends Component {
     constructor(props) {
         super(props);
@@ -17,7 +18,6 @@ export default class servicesClient extends Component {
                 { key: 5, image: require('./../../image/images.png'), name: 'Product name' },
                 { key: 6, image: require('./../../image/images.png'), name: 'Product name' },
                 { key: 7, image: require('./../../image/images.png'), name: 'Product name' },
-                { key: 8, image: require('./../../image/images.png'), name: 'Product name' },
             ]
         };
     }
@@ -27,7 +27,8 @@ export default class servicesClient extends Component {
             <View style={styles.container}>
                 <View style={{ height: hp('9%'), }}>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: wp('5%'), marginTop: hp('2%'), }}>
-                        <Image source={require('./../../image/Logo.png')} style={{ width: 20, marginLeft: wp('4%'), width: 40, height: 40 }} />
+                        {/* <Image source={require('./../../image/Logo.png')} style={{ width: 20, marginLeft: wp('4%'), width: 40, height: 40 }} /> */}
+                        <View></View>
                         <View style={{ flexDirection: 'row' }}>
                             <TouchableOpacity onPress={() => this.props.navigation.navigate('chatList')}>
                                 <Chat style={{ marginLeft: wp('0%'), }} name={'chatbubble-outline'} size={24} color="#000" />
@@ -49,8 +50,7 @@ export default class servicesClient extends Component {
                             keyExtractor={(item, index) => item.key + ""}
                             data={this.state.imagesMost}
                             renderItem={({ item }) =>
-                                <TouchableOpacity style={{}} onPress={() => { this.props.navigation.navigate('serviceList') }}>
-                                    <Image source={item.image} style={styles.homeImage} resizeMode='stretch' />
+                                <TouchableOpacity style={styles.box} onPress={() => { this.props.navigation.navigate('serviceList') }}>
                                     <Text style={styles.name}>{item.name}</Text>
                                 </TouchableOpacity>
                             }
@@ -80,24 +80,23 @@ const styles = StyleSheet.create({
     },
     choose: {
         fontWeight: '700',
-        fontSize: 15
+        fontSize: 15,
+        marginBottom: 10,
     },
-    homeImage: {
-        width: 130,
-        height: 130,
-        marginRight: wp('5%'),
-        marginBottom: hp('3%'),
+    box:{
+        borderRadius: 5,
+        borderWidth: 2,
+        borderColor: Color.green,
         alignItems: 'center',
         justifyContent: 'center',
-        borderRadius: 10
+        width: 130,
+        height: 100,
+        marginRight: 15,
+        marginBottom: 10,
+
     },
     name: {
-        position: 'absolute', alignSelf: 'center',
-        marginTop: hp('10%'),
         fontSize: 12,
-        width: wp('30%')
-        //  marginRight: 20,
-        //  marginLeft: -30,
     }
 });
 

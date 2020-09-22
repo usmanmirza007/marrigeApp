@@ -9,9 +9,9 @@ import reservations from '../component/Client/reservations';
 import checkList from '../component/Client/checkList';
 import Color from '../constant/color';
 import Home from 'react-native-vector-icons/MaterialCommunityIcons'
-import AntIcon from 'react-native-vector-icons/AntDesign'
+import AntIcon from 'react-native-vector-icons/Feather'
 import Calendar from 'react-native-vector-icons/MaterialCommunityIcons'
-import Check from 'react-native-vector-icons/MaterialCommunityIcons'
+import Check from 'react-native-vector-icons/MaterialIcons'
 
 const TabScreens = createMaterialBottomTabNavigator({
    
@@ -30,7 +30,7 @@ const TabScreens = createMaterialBottomTabNavigator({
         navigationOptions: {
             tabBarLabel: "Shop",
             tabBarIcon: ({ tintColor }) => (
-                <AntIcon style={{ marginLeft: wp('0%'), }} name={'hearto'} size={24} color={tintColor}
+                <AntIcon style={{ marginLeft: wp('0%'), }} name={'shopping-cart'} size={24} color={tintColor}
                 onPress={ () => this.props.navigation.navigate('#')} />
             )
         },
@@ -50,7 +50,7 @@ const TabScreens = createMaterialBottomTabNavigator({
         navigationOptions: {
             tabBarLabel: "Check List",
             tabBarIcon: ({ tintColor }) => (
-                <Check style={{ marginLeft: wp('0%'), }} name={'comment-check-outline'} size={24} color={tintColor}
+                <Check style={{ marginLeft: wp('0%'), }} name={'preview'} size={24} color={tintColor}
                 onPress={ () => this.props.navigation.navigate('#')} />
             )
         },
@@ -58,9 +58,9 @@ const TabScreens = createMaterialBottomTabNavigator({
 }, {
     order: ['servicesClient', 'shop', 'reservations', 'checkList',],
     initialRouteName: 'servicesClient',
-    activeColor: '#fff',
+    activeColor: Color.green,
     inactiveColor: Color.greyPrimray,
-    barStyle: { backgroundColor: Color.Mustard},
+    barStyle: {backgroundColor: Color.geryLight, shadowOpacity: 0.6, elevation: 8, shadowOffset:{height: 5, width: 0} },
   },);
 
 export default (TabScreens);

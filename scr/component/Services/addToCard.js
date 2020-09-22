@@ -70,7 +70,7 @@ export default class addToCard extends React.Component {
 
                     <TouchableOpacity style={styles.button}
                         onPress={() => this.props.navigation.navigate('checkOut')}>
-                        <Text style={{ fontWeight: 'bold', fontSize: 15, color: Color.Mustard }}>ADD TO CARD</Text>
+                        <Text style={{ fontWeight: 'bold', fontSize: 15, color: Color.green }}>ADD TO CARD</Text>
                     </TouchableOpacity>
                     <View style={{ marginHorizontal: wp('5%'), }}>
                         <Text style={styles.text}>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.</Text>
@@ -113,6 +113,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         fontWeight: '700',
         marginVertical: hp('2%'),
+        color: Color.green
     },
     productView: { flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: wp('5%'), },
     button: {

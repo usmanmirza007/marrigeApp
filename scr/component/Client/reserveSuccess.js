@@ -29,14 +29,14 @@ export default class reserveSuccess extends React.Component {
                     <Text style={styles.productName}>Bridal Artist</Text>
                     <TouchableOpacity style={styles.button}
                         onPress={() => this.props.navigation.navigate('reserveDate')}>
-                        <Text style={{ fontWeight: 'bold', fontSize: 15, color: Color.Mustard }}>RESERVE</Text>
+                        <Text style={{ fontWeight: 'bold', fontSize: 15,}}>RESERVE</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.button}
                         onPress={() => this.props.navigation.navigate('#')}>
-                        <Text style={{ fontWeight: 'bold', fontSize: 15, color: Color.Mustard }}>MESSAGE</Text>
+                        <Text style={{ fontWeight: 'bold', fontSize: 15,}}>MESSAGE</Text>
                     </TouchableOpacity>
                     <Text style={styles.text}>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.</Text>
-                    <TouchableOpacity onPress={() => { this.props.navigation.navigate('services') }} style={styles.checkoutView}>
+                    <TouchableOpacity onPress={() => { this.props.navigation.navigate('servicesClient') }} style={styles.checkoutView}>
                         <Text style={styles.checkout}>CONTINUE</Text>
                     </TouchableOpacity>
                 </ScrollView>
@@ -44,32 +44,24 @@ export default class reserveSuccess extends React.Component {
         );
     }
 }
-const shadow = {
-    shadowColor: '#30C1DD',
-    shadowRadius: 10,
-    shadowOpacity: 0.6,
-    elevation: 8,
-    shadowOffset: {
-        width: 0,
-        height: 4
-    }
-}
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: Color.LightMustard,
+        backgroundColor: '#969696',
         // alignItems: 'center',
         // justifyContent: 'center',
     },
     text: {
         fontSize: 12,
         marginHorizontal: wp('5%'),
+        // textAlign: 'center',
     },
     productName: {
         alignSelf: 'center',
         fontWeight: '700',
         marginVertical: hp('2%'),
-        marginTop: hp('10%'),
+        marginTop: hp('15%'),
     },
     button: {
 
@@ -89,10 +81,13 @@ const styles = StyleSheet.create({
     },
     input1: {
         alignSelf: 'center',
-        marginTop: hp('-20%'),
+        marginTop: hp('20%'),
+        position: 'absolute',
         fontSize: 20,
         fontWeight: '900',
-        color: Color.white
+        color: Color.white,
+        width: '60%',
+        textAlign: 'center'
     },
     checkoutView: {
         borderWidth: 2,

@@ -29,7 +29,8 @@ export default class reservations extends Component {
             <View style={styles.container}>
                 <View style={{ height: hp('9%'), }}>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: wp('5%'), marginTop: hp('2%'), }}>
-                        <Image source={require('./../../image/Logo.png')} style={{ width: 20, marginLeft: wp('4%'), width: 40, height: 40 }} />
+                        {/* <Image source={require('./../../image/Logo.png')} style={{ width: 20, marginLeft: wp('4%'), width: 40, height: 40 }} /> */}
+                        <View></View>
                         <View style={{ flexDirection: 'row' }}>
                             <TouchableOpacity onPress={() => this.props.navigation.navigate('chatList')}>
                                 <Chat style={{ marginLeft: wp('0%'), }} name={'chatbubble-outline'} size={24} color="#000" />
@@ -56,7 +57,7 @@ export default class reservations extends Component {
                     </View>
                     <View style={{ marginHorizontal: wp('5%'), }}>
                         {/* <Text>SELECTED DATE:{startDate}</Text> */}
-                        <View style={styles.boxView}>
+                        <View style={[styles.boxView, Color.shadow]}>
                             <View style={styles.inputView}>
                                 <Text style={styles.time}>7:00 pm</Text>
                                 <TextInput
@@ -96,7 +97,7 @@ const styles = StyleSheet.create({
         // justifyContent: 'center',
     },
     boxView: {
-        backgroundColor: Color.Pink,
+        backgroundColor: Color.grey,
         height: windowHeight - 300,
         borderRadius: 10,
         marginBottom: hp('5%'),
@@ -105,17 +106,17 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         width: windowWidth - 140,
         height: hp('8%'),
-
+        borderWidth: 1,
+        borderColor: Color.greyPrimray
     },
     CANCEL: {
-        backgroundColor: Color.Mustard,
-        width: windowWidth - 100,
+        backgroundColor: Color.green,
         height: hp('6%'),
         borderRadius: 10,
         alignItems: 'center',
         justifyContent: 'center',
         marginTop: hp('5%'),
-        marginLeft: 35,
+        marginHorizontal: '5%',
     },
     inputView: {
         flexDirection: 'row',
@@ -125,7 +126,7 @@ const styles = StyleSheet.create({
     },
     time: {
         alignSelf: 'center',
-        color: Color.white
+        color: Color.black
     },
 });
 

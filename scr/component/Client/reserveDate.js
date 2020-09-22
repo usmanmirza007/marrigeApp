@@ -63,11 +63,11 @@ export default class reserveDate extends React.Component {
 
                     <TouchableOpacity style={styles.button}
                         onPress={() => this.props.navigation.navigate('reserveDate')}>
-                        <Text style={{ fontWeight: 'bold', fontSize: 15, color: Color.Mustard }}>RESERVE</Text>
+                        <Text style={{ fontWeight: 'bold', fontSize: 15, }}>RESERVE</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.button}
                         onPress={() => this.props.navigation.navigate('#')}>
-                        <Text style={{ fontWeight: 'bold', fontSize: 15, color: Color.Mustard }}>MESSAGE</Text>
+                        <Text style={{ fontWeight: 'bold', fontSize: 15,  }}>MESSAGE</Text>
                     </TouchableOpacity>
                     <Text style={styles.text}>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.</Text>
 
@@ -99,7 +99,7 @@ const shadow = {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: Color.LightMustard,
+        backgroundColor: '#969696',
         // alignItems: 'center',
         // justifyContent: 'center',
     },

@@ -13,6 +13,7 @@ export default class checkListService extends React.Component {
                 { name: 'Jhon Doe', starIcon: 'star', text: 'Very Good, Very Skilled' },
                 { name: 'Jhon Doe', starIcon: 'star', text: 'Loream ipsum dolor sit amet, consecture edipicising sed do temporor incide' },
                 { name: 'Jhon Doe', starIcon: 'star', text: 'Very Good, Very Skilled' },
+                { name: 'Jhon Doe', starIcon: 'star', text: 'Very Good, Very Skilled' },
                 { name: 'Jhon Doe', starIcon: 'star', text: 'Loream ipsum dolor sit amet, consecture edipicising sed do temporor incide' },
 
             ]
@@ -23,13 +24,13 @@ export default class checkListService extends React.Component {
                 <View style={styles.viewContainer}>
                     <View style={styles.starView}>
                         <View style={{ justifyContent: 'center', marginHorizontal: wp('2%') }}>
-                            <Text style={{ color: 'grey' }}>{item.name} </Text>
+                            <Text style={{ color: Color.green }}>{item.name} </Text>
                         </View>
                         <View style={{ flexDirection: 'row', marginHorizontal: wp('5%'), marginVertical: hp('2%') }} >
-                            <Star name={item.starIcon} size={20} color={Color.Mustard} />
-                            <Star name={item.starIcon} size={20} color={Color.Mustard} />
-                            <Star name={item.starIcon} size={20} color={Color.Mustard} />
-                            <Star name={item.starIcon} size={20} color={Color.Mustard} />
+                            <Star name={item.starIcon} size={20} color={Color.star} />
+                            <Star name={item.starIcon} size={20} color={Color.star} />
+                            <Star name={item.starIcon} size={20} color={Color.star} />
+                            <Star name={item.starIcon} size={20} color={Color.star} />
                         </View>
                     </View>
                     <View style={{ justifyContent: 'center', marginHorizontal: wp('2%'), bottom: 10 }}>
@@ -43,7 +44,8 @@ export default class checkListService extends React.Component {
             <View style={styles.container}>
                  <View style={{ height: hp('9%'), }}>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: wp('5%'), marginTop: hp('2%'), }}>
-                        <Image source={require('./../../image/Logo.png')} style={{ width: 20, marginLeft: wp('4%'), width: 40, height: 40 }} />
+                        {/* <Image source={require('./../../image/Logo.png')} style={{ width: 20, marginLeft: wp('4%'), width: 40, height: 40 }} /> */}
+                        <View></View>
                         <View style={{ flexDirection: 'row' }}>
                             <TouchableOpacity onPress={() => this.props.navigation.navigate('chatList')}>
                                 <Chat style={{ marginLeft: wp('0%'), }} name={'chatbubble-outline'} size={24} color="#000" />
@@ -82,7 +84,7 @@ const styles = StyleSheet.create({
     },
     viewContainer: {
         marginVertical: hp('2%'),
-        backgroundColor: '#F9E5EE',
+        backgroundColor: Color.grey,
         height: hp('15%'),
         justifyContent: 'space-between',
         borderRadius: 5,

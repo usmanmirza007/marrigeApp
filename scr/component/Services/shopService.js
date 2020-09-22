@@ -24,7 +24,8 @@ export default class shopService extends Component {
             <View style={styles.container}>
                 <View style={{ height: hp('9%'), }}>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: wp('5%'), marginTop: hp('2%'), }}>
-                        <Image source={require('./../../image/Logo.png')} style={{ width: 20, marginLeft: wp('4%'), width: 40, height: 40 }} />
+                        {/* <Image source={require('./../../image/Logo.png')} style={{ width: 20, marginLeft: wp('4%'), width: 40, height: 40 }} /> */}
+                        <View></View>
                         <View style={{ flexDirection: 'row' }}>
                             <TouchableOpacity onPress={() => this.props.navigation.navigate('chatList')}>
                                 <Chat style={{ marginLeft: wp('0%'), }} name={'chatbubble-outline'} size={24} color="#000" />
@@ -75,7 +76,7 @@ const styles = StyleSheet.create({
     checkoutView: {
         borderWidth: 2,
         borderColor: Color.black,
-        marginHorizontal: wp('0%'),
+        marginHorizontal: wp('5%'),
         height: hp('10%'),
         borderRadius: 5,
         justifyContent: 'center',
@@ -83,7 +84,7 @@ const styles = StyleSheet.create({
         marginVertical: hp('3%'),
     },
     checkout: {
-        color: Color.Mustard,
+        color: Color.green,
         fontWeight: '700'
     }
 });

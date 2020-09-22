@@ -88,15 +88,15 @@ export default class serviceDetail extends React.Component {
 
                     <TouchableOpacity style={styles.button}
                         onPress={() => this.props.navigation.navigate('reserveDate')}>
-                        <Text style={{ fontWeight: 'bold', fontSize: 15, color: Color.Mustard }}>RESERVE</Text>
+                        <Text style={{ fontWeight: 'bold', fontSize: 15, color: Color.green }}>RESERVE</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.button}
-                        onPress={() => this.props.navigation.navigate('#')}>
-                        <Text style={{ fontWeight: 'bold', fontSize: 15, color: Color.Mustard }}>MESSAGE</Text>
+                        onPress={() => this.props.navigation.navigate('chatList')}>
+                        <Text style={{ fontWeight: 'bold', fontSize: 15, color: Color.green }}>MESSAGE</Text>
                     </TouchableOpacity>
                     <View style={{ marginHorizontal: wp('5%'), }}>
                         <Text style={styles.text}>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.</Text>
-                        <View style={styles.box}>
+                        <View style={[styles.box, Color.shadow]}>
                             <View style={styles.reviewView}>
                                 <Text style={styles.performance}>Performance</Text>
                                 <View style={styles.review}>
@@ -145,7 +145,7 @@ export default class serviceDetail extends React.Component {
                                 </View>
                                 <Text style={{ marginLeft: wp('5%'), marginTop: hp('1%'), fontSize: 12 }}>Very Good Very Skilled</Text>
                             </View>
-                            <View style={styles.innerBox1}>
+                            <View style={[styles.innerBox1,]}>
                                 <View style={styles.reviewView}>
                                     <Text style={styles.result}>John Doe</Text>
                                     <View style={styles.review}>
@@ -259,7 +259,8 @@ const styles = StyleSheet.create({
         fontSize: 12,
     },
     innerBox: {
-        backgroundColor: Color.geryLight,
+        borderWidth: 1,
+        borderColor: Color.greyPrimray,
         height: hp('12%'),
         width: wp('80%'),
         borderRadius: 5,
@@ -267,7 +268,8 @@ const styles = StyleSheet.create({
         marginTop: hp('1%'),
     },
     innerBox1: {
-        backgroundColor: Color.geryLight,
+        borderWidth: 1,
+        borderColor: Color.greyPrimray,
         height: hp('18%'),
         width: wp('80%'),
         borderRadius: 5,
@@ -275,7 +277,7 @@ const styles = StyleSheet.create({
         marginTop: hp('1%'),
     },
     box: {
-        backgroundColor: Color.LightPink,
+        backgroundColor: Color.grey,
         borderRadius: 5,
         padding: 5,
         marginTop: hp('2%'),

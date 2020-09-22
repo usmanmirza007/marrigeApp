@@ -94,7 +94,6 @@ export default class shoppingCart extends React.Component {
                             <Text style={styles.name}>Total Amount</Text>
                             <Text style={styles.price}>$966.54</Text>
                         </View>
-                        <View style={styles.border}></View>
                     </View>
                     <TouchableOpacity onPress = {() => {this.props.navigation.navigate('completeOrder')}} style={styles.checkoutView}>
                         <Text style={styles.checkout}>CHECKOUT</Text>
@@ -156,11 +155,11 @@ const styles = StyleSheet.create({
     price: {
         fontSize: 13,
         fontWeight: '700',
-        color: Color.orange,
+        color: Color.green,
     },
     totalView: {
         alignItems: 'flex-end',
-        marginTop: hp('15%'),
+        marginTop: hp('0%'),
     },
     border: {
         borderBottomColor: Color.greyPrimray,
@@ -175,10 +174,10 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         justifyContent: 'center',
         alignItems: 'center',
-        marginBottom: hp('3%'),
+        marginVertical: hp('5%'),
     },
     checkout:{
-        color: Color.Mustard,
+        color: Color.green,
         fontWeight: '700'
     }
 });

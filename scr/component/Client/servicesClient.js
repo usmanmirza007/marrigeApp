@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { View, StatusBar, StyleSheet, ScrollView,Dimensions, FlatList, ImageBackground, Image, Text, TouchableOpacity } from 'react-native';
+import { View, StatusBar, StyleSheet, ScrollView, Dimensions, FlatList, ImageBackground, Image, Text, TouchableOpacity } from 'react-native';
 import Color from '../../constant/color';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { TextInput } from 'react-native-paper';
 import Chat from 'react-native-vector-icons/Ionicons'
 const Width = Dimensions.get('window').width
-const numColums = 2
+
 export default class servicesClient extends Component {
     constructor(props) {
         super(props);
@@ -18,11 +18,14 @@ export default class servicesClient extends Component {
                 { key: 5, image: require('./../../image/images.png'), name: 'Product name' },
                 { key: 6, image: require('./../../image/images.png'), name: 'Product name' },
                 { key: 7, image: require('./../../image/images.png'), name: 'Product name' },
-            ]
+            ],
+            col: 2
         };
     }
 
     render() {
+        const { col } = this.state
+
         return (
             <View style={styles.container}>
                 <View style={{ height: hp('9%'), }}>
@@ -46,11 +49,22 @@ export default class servicesClient extends Component {
                     <View style={{ marginHorizontal: wp('5%'), }}>
                         <Text style={styles.choose}>Choose a Service</Text>
                         <FlatList
-                            numColumns={2}
+                            numColumns={col}
                             keyExtractor={(item, index) => item.key + ""}
                             data={this.state.imagesMost}
                             renderItem={({ item }) =>
-                                <TouchableOpacity style={styles.box} onPress={() => { this.props.navigation.navigate('serviceList') }}>
+                                <TouchableOpacity style={{
+                                    borderRadius: 5,
+                                    borderWidth: 2,
+                                    borderColor: Color.green,
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    // width: 130,
+                                    width: (Width - 25 * col) / col,
+                                    height: 100,
+                                    marginRight: 15,
+                                    marginBottom: 10,
+                                }} onPress={() => { this.props.navigation.navigate('serviceList') }}>
                                     <Text style={styles.name}>{item.name}</Text>
                                 </TouchableOpacity>
                             }
@@ -83,18 +97,7 @@ const styles = StyleSheet.create({
         fontSize: 15,
         marginBottom: 10,
     },
-    box:{
-        borderRadius: 5,
-        borderWidth: 2,
-        borderColor: Color.green,
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: 130,
-        height: 100,
-        marginRight: 15,
-        marginBottom: 10,
 
-    },
     name: {
         fontSize: 12,
     }

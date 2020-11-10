@@ -1,27 +1,29 @@
 import React, { Component } from 'react';
-import { View, StatusBar, StyleSheet, ScrollView,TextInput,FlatList, ImageBackground, Image, Text, TouchableOpacity } from 'react-native';
+import { View, StatusBar, StyleSheet, Dimensions, ScrollView, TextInput, FlatList, ImageBackground, Image, Text, TouchableOpacity } from 'react-native';
 import Color from '../../constant/color';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import Chat from 'react-native-vector-icons/Ionicons'
 import FeaIcon from 'react-native-vector-icons/Feather'
-
+const Width = Dimensions.get('window').width
 
 export default class shop extends Component {
     constructor(props) {
         super(props);
         this.state = {
             imagesMost: [
-                { key: 1, image: require('./../../image/gift.png') },
-                { key: 2, image: require('./../../image/gift.png') },
-                { key: 3, image: require('./../../image/gift.png') },
+                { key: 1, image: require('./../../image/user2.jpg') },
+                { key: 2, image: require('./../../image/user2.jpg') },
+                { key: 3, image: require('./../../image/user2.jpg') },
                 { key: 4, image: require('./../../image/gift.png') },
                 { key: 5, image: require('./../../image/gift.png') },
                 { key: 6, image: require('./../../image/gift.png') },
-            ]
+            ],
+            col: 2
         };
     }
 
     render() {
+        const {col} = this.state
         return (
             <View style={styles.container}>
                 <View style={{ height: hp('9%'), }}>
@@ -42,7 +44,7 @@ export default class shop extends Component {
                     </View>
                 </View>
                 <ScrollView>
-                    <View style={{ marginHorizontal: wp('5%'),}}>
+                    <View style={{ marginHorizontal: wp('5%'), }}>
                         <View style={[styles.inputView, shadow]}>
                             <TextInput
                                 style={styles.input}
@@ -50,19 +52,29 @@ export default class shop extends Component {
                                 placeholderTextColor={Color.greyPrimray}
                                 value={this.state.chooseDate}
                                 onChangeText={chooseDate => this.setState({ chooseDate })} />
-                            <View style={{justifyContent: 'center',}}>
-                            <FeaIcon style={{  marginRight: 20, }} name={'search'} size={24} color={Color.black}
-                                onPress={
-                                    () => this.props.navigation.navigate('#')} />
+                            <View style={{ justifyContent: 'center', }}>
+                                <FeaIcon style={{ marginRight: 20, }} name={'search'} size={24} color={Color.black}
+                                    onPress={
+                                        () => this.props.navigation.navigate('#')} />
                             </View>
                         </View>
                         <FlatList
-                            numColumns={2}
+                            numColumns={col}
                             keyExtractor={(item, index) => item.key + ""}
                             data={this.state.imagesMost}
+
                             renderItem={({ item }) =>
                                 <TouchableOpacity style={{}} onPress={() => { this.props.navigation.navigate('addToCard') }}>
-                                    <Image source={item.image} style={styles.homeImage} resizeMode='stretch' />
+                                    <Image source={item.image} 
+                                    style={{
+                                        width: (Width-20*col)/col,
+                                        // width: 140,
+                                        height: 130,
+                                        marginRight: wp('5%'),
+                                        marginBottom: hp('3%'),
+                                        // borderRadius: 20,
+                                        // backgroundColor: '#000'
+                                    }} />
                                 </TouchableOpacity>
                             }
                         />
@@ -105,11 +117,7 @@ const styles = StyleSheet.create({
         fontWeight: '500',
     },
     homeImage: {
-        width: 135,
-        height: 130,
-        marginRight: wp('5%'),
-        marginBottom: hp('3%'),
-        borderRadius: 20,
+
     },
 });
 

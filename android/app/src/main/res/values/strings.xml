@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">The Marriages</string>
+    <string name="facebook_app_id">APP_ID</string>
 </resources>
